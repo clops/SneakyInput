@@ -37,10 +37,6 @@ joystickRadius,
 thumbRadius,
 deadRadius;
 
-- (void) dealloc
-{
-	[super dealloc];
-}
 
 -(id)initWithRect:(CGRect)rect
 {
@@ -181,7 +177,7 @@ deadRadius;
 {
 	CGPoint location = CGPointZero;
 	if(!autoCenter){
-		CGPoint location = [[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]];
+		location = [[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]];
 		location = [self convertToNodeSpace:location];
 	}
 	[self updateVelocity:location];
